@@ -1,241 +1,238 @@
-%\documentclass[hyperref={pdfpagemode=FullScreen},aspectratio=169]{beamer}
-\documentclass{beamer}
-
+\documentclass[hyperref={pdfpagemode=FullScreen},aspectratio=169]{beamer}
 
 \usepackage{tikz}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{hyperref}
 \graphicspath{{./images/}}
 
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
-%\setbeamertemplate{itemize item}[triangle]
+
 \setbeamertemplate{background}{
   \begin{tikzpicture}
     \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{canvasLectura3.jpg}};
   \end{tikzpicture}
 }
 
+\title{DSpace: \\Manejo de repositorios abiertos}
 
-
-\title{DSPACE: \\Manejo de repositorios abiertos}
-
-\author[BUAP FCC]{Presenta:\\
-García Rojas Alan \\
+\author[BUAP Facultad de Ciencias de la Computación]{Presenta:\\
+García Rojas Alan 201765944\\
 Liévana Poy Erick 201742006\\
 Lima Estrada Efraín 201705754\\
 Reyes Reyes Julián 201643331}
 
 \institute[]{Benemérita Universidad Autónoma de Puebla \\Facultad de Ciencias de la Computación}
 
-\date{Septiembre 30 2021}
+\date{\today}
 
 \begin{document}
 
 {
-\setbeamertemplate{background}{
-  \begin{tikzpicture}
-    \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{IoTCanvas.jpg}};
-  \end{tikzpicture}
-}
-\begin{frame}[t]
-  \titlepage
-\end{frame}
+  \setbeamertemplate{background}{
+    \begin{tikzpicture}
+      \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{IoTCanvas.jpg}};
+    \end{tikzpicture}
+  }
+  \begin{frame}[t]
+    \titlepage
+  \end{frame}
 }
 
 \begin{frame}[t]
   \frametitle{Índice}
-  \tableofcontents
+  \small
+  \begin{multicols}{2}
+    \tableofcontents
+  \end{multicols}
+\end{frame}
+
+\section{Resumen}
+\begin{frame}[t]
+  \frametitle{Resumen}
+  \begin{itemize}
+    \item Un repositorio es un espacio centralizado donde se almacena, organiza, mantiene y difunde información digital, habitualmente archivos informáticos, que pueden contener trabajos científicos, conjuntos de datos o software
+    \item Un repositorio abierto son sistemas de información que preservan y organizan materiales científicos y académicos como apoyo a la investigación y el aprendizaje, a la vez que garantizan el acceso a la información
+    \item Los repositorios abiertos tienen sus inicios en los años 90, en el área de la física y las matemáticas, donde los académicos aprovecharon la red para compartir sus investigaciones con otros colegas. Este proceso era valioso porque aceleraba el ciclo científico de publicación y revisión de resultados
+  \end{itemize}
 \end{frame}
 
 \section{Introducción}
-
-\begin{frame}[t]
-  \frametitle{¿Qué es DSPACE?}
-  \begin{itemize}
-    \item DSPACE es un software utilizado por muchas organizaciones para la construcción de repositorios digitales abiertos, sin fines de lucro y comerciales.
-    \item Es gratuito, fácil de usar y ampliamente personalizable.
-  \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Visión y misión de DSPACE}
-  \begin{itemize}
-    \item Visión: producir una opción mundial de repositorios que proporcionen los medios para hacer que la información esté abiertos y  disponibles y de fácil administración.
-    \item Misión: crear un software de código abierto a través de una comunidad de desarrolladores activa.
-  \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Sobre DSPACE}
-  \begin{itemize}
-    \item Conserva y permite un acceso fácil y abierto a todo tipo de contenido digital (como textos, imágenes, etc.).
-    \item Tiene una amplia comunidad de desarrolladores que están enfocados en la ampliación y mejora continua del software.
-  \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
-\end{frame}
-
-\section{Funcionamiento de DSPACE}
-
 \begin{frame}[t]
   \vfill
   \center
-  \huge \textbf{Funcionamiento de DSPACE}
+  \Huge \textbf{Introducción}
   \vfill
 \end{frame}
 
+\subsection{¿Qué es DSpace?}
 \begin{frame}[t]
-  \frametitle{Sumisión}
+  \frametitle{¿Qué es DSpace?}
   \begin{itemize}
-    \item Interfaz web hecha para una mejor adaptación por parte del remitente al crear un ítem al depositar un archivo.
-    \item DSPACE fue diseñado para manejar cualquier tipo de formato ( documentos de texto, videos, etc. ).
+    \item Es un software de código abierto que provee herramientas para la administración de colecciones digitales a traves de repositorios abiertos.
+    \item Responde a la necesidad específica como sistema de archivos digitales centrado en el almacenamiento, acceso y preservación a largo plazo de contenido digital.
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
+  \center
+  \includegraphics[height=0.4\paperheight]{dspace.png}
 \end{frame}
 
+\subsection{¿Para qué se usa DSpace?}
 \begin{frame}[t]
-  \frametitle{Administración I}
+  \frametitle{¿Para qué se usa DSpace?}
   \begin{itemize}
-    \item Los bitstreams (archivos de datos) son organizados juntos en conjuntos relacionados.
-    \item Cada bitstream tiene un formato técnico y otra información técnica.
-    \item Esta información técnica es guardada con los bitstreams para ayudar con la preservación en el tiempo.
+    \item Comunmente usada para la administración de colecciones digitales o repositorio bibliográfico
+    \item Soporta una gran variedad de datos entre los que destacan:
+      \begin{itemize}
+        \item Libros
+        \item Tesis
+        \item Fotografias
+        \item Filmes
+        \item Videos
+        \item Datos de Investigación
+      \end{itemize}
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
 \end{frame}
 
+\subsection{Historia}
 \begin{frame}[t]
-  \frametitle{Administración II}
+  \frametitle{Historia}
   \begin{itemize}
-    \item Un ítem es un archivo atómico que consiste en la agrupación de contenido relacionado y de descripciones asociadas (metadatos).
-    \item Un ítem expone los metadatos indexados para navegación y búsqueda.
-    \item Los ítems están organizados en colecciones de material lógicamente relacionado.
+    \item Fue desarrollado en 2002 por Hewlett-Packard(HP) y el Instituto de Tecnología de Massachusetts(MIT)
+    \item Actualmente es desarrollado y mantenido por DuraSpace
+    \item DSpace esta disponible en mas de 20 lenguajes
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
+  \center
+  \includegraphics[height=0.4\paperheight]{hp.jpg}
+  \hspace{2cm}
+  \includegraphics[height=0.4\paperheight]{mitl.jpg}
 \end{frame}
 
+\subsection{Logros}
 \begin{frame}[t]
-  \frametitle{Administración II}
+  \frametitle{Logros}
   \begin{itemize}
-    \item Un ítem es un archivo atómico que consiste en la agrupación de contenido relacionado y de descripciones asociadas (metadatos).
-    \item Un ítem expone los metadatos indexados para navegación y búsqueda.
-    \item Los ítems están organizados en colecciones de material lógicamente relacionado.
+    \item Dspace es usado por mas de 2500 instituciones al lo largo del mundo, entre las que destacan:
+      \begin{itemize}
+        \item El Banco Mundial
+        \item Universidad de Cambridge
+        \item Universidad de Hardvard
+        \item Instituto de Tecnología de Massachusetts
+        \item Imperial College London
+        \item La Organización Mundial de la Salud
+      \end{itemize}
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
 \end{frame}
 
+\section{Características}
 \begin{frame}[t]
-  \frametitle{Administración II}
-  \begin{itemize}
-    \item Una comunidad es el nivel más alto de la jerarquía de contenido de dspace.
-    \item Corresponden a partes de la organización tal como departamentos, laboratorios, centros de investigación o escuelas.
-  \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
+  \vfill
+  \center
+  \Huge \textbf{Características}
+  \vfill
 \end{frame}
 
+\subsection{Arquitectura de la Aplicación}
 \begin{frame}[t]
-  \frametitle{Web}
+  \frametitle{Arquitectura de la Aplicación}
   \begin{itemize}
-    \item La arquitectura modular de DSpace permite la creación de repositorios multidisciplinarios que pueden ser expandidos  a través de fronteras institucionales.
+    \item Sofware de Código libre y abierto
+    \item Manejo del FrontEnd y BackEnd
+    \item Base de Datos
+    \item Motor de Busqueda
+    \item Uso de Metadatos
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
 \end{frame}
 
+\subsection{Motor de Busqueda Integrado}
 \begin{frame}[t]
-  \frametitle{Preservación}
+  \frametitle{Motor de Busqueda Integrado}
   \begin{itemize}
-    \item DSpace se compromete a ir mas allá de una preservación confiable de un archivo, para ofrecer una preservación funcional y tecnológicamente accesible a los archivos como formatos, medios y paradigmas que evolucionen en el tiempo para muchos tipos de datos como sea posible.
+    \item Tiene integrado Apache Solr, un motor de busqueda que permite:
+      \begin{itemize}
+        \item Busqueda y Recuperación
+        \item Filtro de resultados
+        \item El texto completo de los archivos es indexado
+        \item Busqueda a travez de metadatos
+      \end{itemize}
+    \item Las interfaces de busquedas son personalizables
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
+  \center
+  \includegraphics[height=0.3\paperheight]{apache.png}
 \end{frame}
 
+\subsection{Reconoce todos los Tipos de Archivos}
+\begin{frame}[t]
+  \frametitle{Reconoce todos los Tipos de Archivos}
+  \begin{itemize}
+    \item DSpace puede almacenar cualquier tipo de archivos
+    \item Automaticamente reconoce los tipos de archivos mas comunes:
+      \begin{itemize}
+        \item DOC
+        \item PDF
+        \item XLS
+        \item PPT
+        \item JPEG
+        \item MPEG
+        \item TIFF
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{Metadatos}
+\begin{frame}[t]
+  \frametitle{Metadatos}
+  \begin{itemize}
+    \item DSpace usa Qualified Dublin Core(QDC) un sistema de 15 definiciones semánticas descriptivas que pretenden transmitir un significado semántico a las mismas. Estas definiciones:
+      \begin{itemize}
+        \item Son opcionales
+        \item Se pueden repetir
+        \item Pueden aparecer en cualquier orden
+      \end{itemize}
+    \item Este sistema de definiciones fue diseñado específicamente para proporcionar un vocabulario de características "base", capaces de proporcionar la información descriptiva básica sobre cualquier recurso, sin que importe el formato de origen, el área de especialización o el origen cultural
+  \end{itemize}
+\end{frame}
+
+\subsection{Herramientas y Plugins}
+\begin{frame}[t]
+  \frametitle{Herramientas y Plugins}
+  \begin{itemize}
+    \item DSpace provee un conjunto de herramientas para la administración, busqueda, edición, importación, exportación, etc. de los contenidos del repositorio.
+    \item De igual forma DSpace permite el uso de plugins comerciales
+  \end{itemize}
+\end{frame}
+
+\subsection{Seguridad}
+\begin{frame}[t]
+  \frametitle{Seguridad}
+  \begin{itemize}
+    \item DSpace tiene integrado su propio sistema de autenficación y autorización
+    \item De igual forma permite el uso de otros sistemas de autentificación como LDAP o Shibboleth
+    \item Permite la asiganición de permisos para leer/escribir, en todo el sistema, por comunidad o por colección, por item o por archivo.
+    \item Igual permite la asiganción de permisos administrativos por comunidad o por colección
+  \end{itemize}
+\end{frame}
+
+\subsection{Recuperación}
 \begin{frame}[t]
   \frametitle{Recuperación}
   \begin{itemize}
-    \item La interface para el usuario final permite la navegación y búsqueda de los archivos, una vez encontrado el archivo, este es formateado para mostrarse en el navegador mientras otros formatos pueden ser descargados y abiertos con una determinada aplicación.
+    \item DSpace permite exportar todo el contenido del repositorio como Paquetes de Informacion de Archivo(AIP)
+    \item Estos AIP pueden ser usados para restaurar el sitio completo, comunidades, colecciones o items
   \end{itemize}
-  \begin{figure}[h]
-    \centering
-  \end{figure}
 \end{frame}
 
-\section{¿Por qué usar DSPACE?}
-
+\subsection{Compilación}
 \begin{frame}[t]
-  \vfill
-  \center
-  \huge \textbf{¿Por qué usar DSPACE?}
-  \vfill
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Una mayor comunidad}
+  \frametitle{Compilación}
   \begin{itemize}
-    \item DSpace tiene más de 1000 organizaciones actualmente que usan este software en un entorno de producción o de proyecto.
-    \item El uso mas común es por parte de las bibliotecas de investigación como repositorio institucional, si embargo también se usa como:
+    \item DSpace compila de acuerdo a los protocolos estandar, asi como con las mejores prácticas para acceder, importar y exportar
+    \item Uso de los protocolos:
       \begin{itemize}
-        \item Repo. Basado en temas.
-        \item Repo. Conjunto de datos.
-        \item Repo. En medios.
-      \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Software gratuito y de código abierto}
-  \begin{itemize}
-    \item DSpace esta disponible de forma gratuita para cualquier persona y se puede descargar desde GitHub.
-    \item El código esta actualmente bajo licencia de código abierto BSD, lo que significa que cualquier organización puede modificar e integrar código en su aplicación comercial sin pago alguno.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Personalizable I}
-  \begin{itemize}
-    \item DSpace permite la personalización de las siguientes formas clave:
-      \begin{itemize}
-        \item Interfaz de usuario: personalización completa de la apariencia del sitio web DSpace.
-        \item Metadatos: Dublín Core es el formato de metadatos personalizado, sin embargo se pueden hacer cambios en los campos para su personalización.
-        \item Configuración de búsqueda y exploración: se permite decidir que campos mostrar a la hora de explorar (titulo, autor, etc.)
-      \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Personalizable II}
-  \begin{itemize}
-    \item Mecanismos de autenticación local: se incluyen complementos de autenticación para la mayoría de métodos de autenticación universitarios (como LDPA y LDPA jerárquico), además se provee su propio método de autenticación interno, incluso se puede configurar para usar varios métodos de autenticación a la vez.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Personalizable III}
-  \begin{itemize}
-    \item Compatibilidad con estándares: se cumplen con varios protocolos estándar de acceso, ingesta y exportación, dichos estándares incluyen:
-      \begin{itemize}
-        \item OAI-PMH
-        \item OAI-ORE
-        \item SWORD
+        \item Open Archives Initiative Protocol for Metadata Harvesting(OAI-PMH)
+        \item SWORD V2
+        \item OpenAIRE
         \item WebDAV
         \item OpenSearch
         \item OpenURL
@@ -245,49 +242,102 @@ Reyes Reyes Julián 201643331}
   \end{itemize}
 \end{frame}
 
+\subsection{Base de Datos}
 \begin{frame}[t]
-  \frametitle{Personalizable IV}
+  \frametitle{Base de Datos}
   \begin{itemize}
-    \item Base de datos configurable: puede escoger entre PostgreSQL u Oracle para la base de datos donde se administren los metadatos.
-    \item Idioma: la aplicación web DSpace esta disponible para varios idiomas, lo cual implica que se puede personalizar, e incluso admitir varios idiomas.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \frametitle{Utilizado por instituciones educativas, gubernamentales, etc.}
-  \begin{itemize}
-    \item Esta plataforma es usada por instituciones de educación superior (mercado inicial) aunque también a sido usado por:
+    \item DSpace permite elegir entre las Bases de Datos:
       \begin{itemize}
-        \item Museos
-        \item Archivos estatales
-        \item Bibliotecas (estatales y nacionales)
-        \item Repositorios de revistas
-        \item Consorcios
-        \item Empresas comerciales
+        \item PostgreSQL
+        \item Oracle
       \end{itemize}
+    \item Esta base puede manejar los archivos y su metadata.
+  \end{itemize}
+  \center
+  \includegraphics[height=0.3\paperheight]{oracle.png}
+  \hspace{2cm}
+  \includegraphics[height=0.3\paperheight]{postgre.png}
+\end{frame}
+
+\subsection{Manejo de Archivos}
+\begin{frame}[t]
+  \frametitle{Manejo de Archivos}
+  \begin{itemize}
+    \item El repositorio de DSpace puede ser guardado de manera local o en una solucion basada en la nube como Amazon S3
+    \item Al recibir un archivo DSpace calcula y guarda una suma de verificación para cada archivo. DSpace usa estas sumas de verificación para validar la integridad de los archivos.
   \end{itemize}
 \end{frame}
 
+\section{Funcionamiento}
 \begin{frame}[t]
-  \frametitle{Se puede instalar fuera de la caja}
-  \begin{itemize}
-    \item Viene con una interface basada en web, dado esto, se puede instalar en Linux, Mac OSX, Windows.
-  \end{itemize}
+  \vfill
+  \center
+  \Huge \textbf{Funcionamiento}
+  \vfill
 \end{frame}
 
+{
+  \setbeamertemplate{navigation symbols}{}
+  \begin{frame}<article:0>[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[at=(current page.center)] {
+        \includegraphics[keepaspectratio,
+        width=\paperwidth,
+        height=\paperheight]{diagramaDSpace.png}
+      };
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\subsection{Propuesta de Información}
 \begin{frame}[t]
-  \frametitle{Gestión y preservación de todo tipo de contenido digital}
+  \frametitle{Propuesta de Información}
   \begin{itemize}
-    \item DSpace puede reconocer y administrar gran variedad de formatos, algunos de los formatos más comunes que se administran en el entorno DSpace son:
+    \item El usuario envia su propuesta de información. En este propuesta se envian los archivos junto con su metadata.
+    \item Esto se realiza a traves de la interfaz web del repositorio.
+    \item Esta propuesta es revisada por el curador de la colección, quien puede aceptar o rechazar la propuesta
       \begin{itemize}
-        \item Word
-        \item PDF
-        \item JPEG
-        \item MPEG
-        \item TIFF
+        \item Si es rechazada se informa al usuario a traves de un correo la razon del rechazo, el usuario puede hacer las modificaciones necesarias para reiniciar el proceso
+        \item Si es aceptada, entonces se inicia el siguiente paso en la metodología de trabajo. De no haber otro paso la información es guardada en la colección
       \end{itemize}
-    \item Además, DSpace cuenta con un registro de formato simple donde se pueden registrar formatos no reconocidos para ser identificados en el futuro.
+    \item La información ya almacenada en el repositorio, puede ser buscada y recuperada de manera sencilla a partir del a interfaz web del repositorio. Puede buscarse por su contenido o por su metadata
   \end{itemize}
 \end{frame}
 
-  \end{document}
+\subsection{Estructura}
+\begin{frame}[t]
+  \frametitle{Estructura}
+  \begin{itemize}
+    \item La información del usuario puede componerse de 1 o mas archivos y su metadata, esto se une en un bloque unitario llamado \textit{Item}
+    \item En DSpace un item es la unidad atómica del repositorio. Consiste de información relacionada por su metadata, la cual es usada para indexada para su busqueda en el futuro
+    \item Un conjunto de \textit{Items} es una colección. Esta es formada por material que esta relacionado de manera lógica.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Estructura}
+  \begin{itemize}
+    \item Una comunidad esta formada por un conjunto de colecciones. A su vez una comunidad corresponde a partes de la organización como departamentos, laboratorios, centros de investigación o escuelas.
+    \item El diseño modular de DSpace le permite la creación de repositorios grandes e interdisciplinarios, que pueden ser usados por multiples organizaciones.
+    \item DSpace esta diseñado para preservar la información funcional y actualizada. Adaptandose a los formatos, medios y paradigmas que van evolucionando respecto al tiempo.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Estructura}
+  \center
+  \includegraphics[height=0.7\paperheight]{estructura.png}
+\end{frame}
+
+\section{Referencias}
+\begin{frame}[t]
+  \frametitle{Referencias}
+  \begin{itemize}
+    \item Página DSpace: \url{https://duraspace.org/dspace/}
+    \item Especificaciones DSpace: \url{https://duraspace.org/dspace/resources/technical-specifications/}
+    \item Diagrama DSpace: \url{https://duraspace.org/wp-content/uploads/dspace-files/DSpace_Diagram.pdf}
+    \item Smith M., Barton M., Bass M., Branschofsky M., McClellan G., Stuve D., Tansley R. \& Harford J.. (2003). DSpace An Open Source Dynamic Digital Repository. Septiembre 2021, de D-Lib Magazine Sitio web: \url{http://www.dlib.org/dlib/january03/smith/01smith.html}
+  \end{itemize}
+\end{frame}
+
+\end{document}
