@@ -1,0 +1,423 @@
+\documentclass[hyperref={pdfpagemode=FullScreen},aspectratio=169]{beamer}
+
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\graphicspath{{./images/}}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+
+\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!50!bg}
+
+\setbeamercolor{block title example}{use=structure,fg=structure.fg,bg=structure.fg!20!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title,bg=block title.bg!50!bg}
+
+\setbeamertemplate{background}{ \begin{tikzpicture}
+  \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{canvasLectura3.jpg}};
+\end{tikzpicture} }
+
+\BeforeBeginEnvironment{block}{\begin{adjustbox}{minipage={\linewidth}, center}}
+\AfterEndEnvironment{block}{\end{adjustbox}}
+\addtobeamertemplate{block begin}{\setlength{\textwidth}{0.9\textwidth}}{}
+
+\title{DSpace: \\Manual de Instalación}
+
+\author[BUAP Facultad de Ciencias de la Computación]{Presenta:\\
+García Rojas Alan 201765944\\
+Liévana Poy Erick 201742006\\
+Lima Estrada Efraín 201705754\\
+Reyes Reyes Julián 201643331}
+
+\institute[]{Benemérita Universidad Autónoma de Puebla \\Facultad de Ciencias de la Computación}
+
+\date{\today}
+
+\begin{document}
+
+{ \setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{IoTCanvas.jpg}};
+  \end{tikzpicture}
+}
+\begin{frame}[t]
+  \titlepage
+\end{frame} }
+
+\begin{frame}[t]
+  \frametitle{Índice}
+  \small
+  \begin{multicols}{2}
+    \tableofcontents
+  \end{multicols}
+\end{frame}
+
+\section{Resumen}
+\begin{frame}[t]
+  \frametitle{Resumen}
+  \begin{itemize}
+    \item La presente tiene como finalidad servir como un manual de instalación para el software de repositorios abiertos DSpace.
+    \item Esta guía es funcional para la versión 7.0 de DSpace.
+    \item A partir de la versión 7 (y superior), la aplicación DSpace se divide en un "frontend" (interfaz de usuario) y un "backend" (API de servidor). La mayoría de las instituciones querrán instalar AMBOS. Sin embargo, puede decidir si ejecutarlos en la misma máquina o en máquinas separadas.
+    \item Recomendamos instalar primero el Backend, ya que el Frontend requiere un Backend válido para ejecutarse correctamente.
+  \end{itemize}
+\end{frame}
+
+\section{Dependencias del Backend}
+\begin{frame}[t]
+  \vfill
+  \center
+  \Huge \textbf{Dependencias del Backend}
+  \url{https://wiki.lyrasis.org/display/DSDOC7x/Installing+DSpace}
+  \vfill
+\end{frame}
+
+\subsection{Sistema Operativo}
+\begin{frame}[t]
+  \frametitle{Sistema Operativo}
+  \begin{itemize}
+    \item DSpace puede ser instalado y ejecutado en sistemas operativos basados en UNIX(Linux/Mac OSX) o basados en Microsoft Windows.
+    \item Muchas distribuciones de Linux / Unix vienen con algunas de las dependencias a continuación preinstaladas o instaladas fácilmente mediante actualizaciones. Debe consultar la documentación de su distribución particular o los administradores del sistema local para determinar lo que ya está disponible.
+  \end{itemize}
+\end{frame}
+
+\subsection{Java Development Kit}
+\begin{frame}[t]
+  \frametitle{Java Development Kit}
+  \begin{itemize}
+    \item Java es un lenguaje de programación desarrollado originalmente por Sun Microsystems lanzado en 1995 como un componente central de Sun Microsystems' Java Platform.
+    \item Las instrucciones de descarga e instalación de OpenJDK se pueden encontrar aquí \url{http://openjdk.java.net/install/}
+    \item Es importante asegurarse de instalar el paquete de desarrollo completo(JDK).
+  \end{itemize}
+\end{frame}
+
+\subsection{Apache Maven}
+\begin{frame}[t]
+  \frametitle{Apache Maven}
+  \begin{itemize}
+    \item Apache Maven es una herramienta de comprensión y gestión de proyectos de software. Basado en el concepto de un modelo de objetos de proyecto (POM), Maven puede administrar la construcción, los informes y la documentación de un proyecto a partir de una pieza central de información.
+    \item Maven es necesario en la primera etapa del proceso de compilación para ensamblar el paquete de instalación para su instancia de DSpace.
+    \item Apache Maven puede ser descargado desde la siguiente liga: \url{http://maven.apache.org/download.html}
+  \end{itemize}
+\end{frame}
+
+\subsection{Apache Ant}
+\begin{frame}[t]
+  \frametitle{Apache Ant}
+  \begin{itemize}
+    \item Apache Ant es una biblioteca de Java y una herramienta de línea de comandos cuya misión es impulsar los procesos descritos en los archivos de compilación como objetivos y puntos de extensión que dependen unos de otros.
+    \item Se requiere Apache Ant para la segunda etapa del proceso de compilación. Primero, Maven se usa para construir el instalador, después de lo cual Ant se usa para instalar / implementar DSpace en el directorio de instalación.
+    \item Apache Ant puede ser descargado desde la siguiente liga: \url{http://ant.apache.org}
+  \end{itemize}
+\end{frame}
+
+\subsection{Base de Datos}
+\begin{frame}[t]
+  \frametitle{Base de Datos}
+  \begin{itemize}
+    \item DSpace al ser un repositorio, requiere de una base de datos para poder manejar la información. DSpace puede funcionar con:
+      \begin{itemize}
+        \item PostgreSQL
+        \item Oracle DataBase
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsubsection{PostgreSQL}
+\begin{frame}[t]
+  \frametitle{PostgreSQL}
+  \begin{itemize}
+    \item PostgreSQL es un potente sistema de base de datos relacional de objetos de código abierto con más de 30 años de desarrollo activo que le ha ganado una sólida reputación por su fiabilidad, solidez de funciones y rendimiento.
+    \item Este manual instalara DSpace con PostgreSQL.
+    \item PostgreSQL puede ser descargado de la siguiente liga: \url{http://www.postgresql.org/}
+  \end{itemize}
+\end{frame}
+
+\subsubsection{Oracle DataBase}
+\begin{frame}[t]
+  \frametitle{Oracle DataBase}
+  \begin{itemize}
+    \item Oracle Database es un sistema de gestión de base de datos de tipo objeto-relacional desarrollado por Oracle Corporation.
+    \item Tenga en cuenta que todo el desarrollo activo de DSpace se produce en PostgreSQL en este momento.
+    \item Oracle DataBase puede ser descargado de la siguiente liga: \url{http://www.oracle.com/database/}
+  \end{itemize}
+\end{frame}
+
+\subsection{Apache Solr}
+\begin{frame}[t]
+  \frametitle{Apache Solr}
+  \begin{itemize}
+    \item Solr es un motor de búsqueda de código abierto basado en la biblioteca Java del proyecto Lucene, con API en XML/HTTP y JSON, resaltado de resultados, búsqueda por facetas, caché, y una interfaz para su administración.
+    \item Es posible que desee leer partes del tutorial de inicio rápido para familiarizarse con el diseño y el funcionamiento de Solr.
+    \item Apache Solr puede ser descargado en la siguiente liga: \url{https://solr.apache.org/}
+  \end{itemize}
+\end{frame}
+
+\subsection{Apache Tomcat}
+\begin{frame}[t]
+  \frametitle{Apache Tomcat}
+  \begin{itemize}
+    \item Apache Tomcat es una tecnología de plataforma Java para extender servlets. Todos los motores de servlet tienen una API común. El componente Conector de servlet de ArcIMS requiere un motor de servlet si su servidor web no admite servlets de forma nativa.
+    \item Los servlets de Java son programas que se ejecutan en un servidor web o de aplicaciones y actúan como una capa intermedia entre las solicitudes que provienen de un navegador web u otro cliente HTTP y las bases de datos o aplicaciones en el servidor HTTP.
+    \item Apache Tomcat puede ser descargado desde la siguiente liga: \url{http://tomcat.apache.org}
+  \end{itemize}
+\end{frame}
+
+\section{Instalación de Backend}
+\begin{frame}[t]
+  \vfill
+  \center
+  \Huge \textbf{Instalación de Backend}
+  \vfill
+\end{frame}
+
+\subsection{Preinstalación}
+\begin{frame}[t]
+  \frametitle{Preinstalación}
+  \begin{itemize}
+    \item Se deben instalar todas las dependencias del BackEnd antes mencionadas.
+    \item Este manual hara la instalación con la base de datos PostgreSQL.
+    \item Este manual sera enfocado a una instalación realizada a un Sistema Operativo basado en UNIX, por lo cual tendra comandos propios a este tipo de sistemas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Preinstalación}
+  \begin{itemize}
+    \item Algunas de las dependencias como Apache Tomcat, deben ejecutarse con un usuario que tengas permisos de lectura y escritura en el directorio root de DSpace.
+    \item Para lograr eso debe asegurarse de que el propietario de Tomcat también sea propietario del directorio root de DSpace, ó puede crear una nueva cuenta de usuario "\textit{dspaceUsuario}" y asegurarse de que Tomcat también se ejecute desde esa cuenta.
+      \begin{block}{Crear un usuario}
+        \center
+        useradd -m \textbf{dspaceUsuario}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Descarga de DSpace}
+\begin{frame}[t]
+  \frametitle{Descarga de DSpace}
+  \begin{itemize}
+    \item Descargar la ultima version de DSpace. Se puede descargar como .zip o como .tar.gz.
+    \item Se puede descargar desde el repositorio en Github de Dspace que se encuentra en la siguiente liga: \url{https://github.com/DSpace/DSpace/releases}
+    \item Para poder descomprimir DSpace se pueden usar los comandos:
+      \begin{block}{Archivo zip}
+        \center
+        unzip dspace-7.0.zip
+      \end{block}
+      \begin{block}{Archivo tar.gz}
+        \center
+        gunzip -c dspace-7.0.tar.gz | tar -xf -
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Descarga de DSpace}
+  \begin{itemize}
+    \item Para facilitar la referencia, nos referiremos a la ubicación de esta versión descomprimida de la versión de DSpace como "\textit{dspace-source}" en el resto de estas instrucciones. Después de descomprimir el archivo, es posible que el usuario desee cambiar la propiedad de la carpeta dspace-7.x al usuario "dspace".
+      \begin{block}{Cambio de propietario}
+        \center
+        chown -c -R \textbf{dspace-source}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Base de Datos}
+\begin{frame}[t]
+  \frametitle{Base de Datos}
+  \begin{itemize}
+    \item Como mencionamos este manual hara una instalación de DSpace con PostgreSQL.
+    \item Como requerimiento para la base de datos es necesario instalar y activar la extension \textit{pgcrypto}.
+    \item La extensión pgcrypto permite a DSpace crear UUID (identificadores universalmente únicos) para todos los objetos en DSpace, lo que significa que los identificadores de objetos (internos) ahora son únicos a nivel mundial y ya no están vinculados a las secuencias de la base de datos.
+    \item En la mayoría de los sistemas operativos Linux, esta extensión se proporciona en el paquete "postgresql-contrib" en su administrador de paquetes. Por lo tanto, asegúrese de haber instalado "postgresql-contrib"
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Base de Datos}
+  \begin{itemize}
+    \item Cree un usuario en la base de datos de PostgreSQL para DSpace (este usuario puede tener cualquier nombre, pero asumiremos que lo llama "\textit{Usuario}"). Esto es completamente independiente del usuario del sistema operativo dspace creado anteriormente.
+      \begin{block}{Crear usuario}
+        \center
+        createuser --username=postgres --no-superuser --pwprompt \textbf{Usuario}
+      \end{block}
+    \item Se le pedirá (dos veces) una contraseña para el nuevo usuario de dspace. Luego se le pedirá la contraseña del superusuario de PostgreSQL (postgres). Este ultimo fue creado durante la instalación de PostgreSQL.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Base de Datos}
+  \begin{itemize}
+    \item Cree una base de datos de dspace, propiedad del usuario de dspace PostgreSQL. Al igual que en el paso anterior, esto solo puede hacerlo una cuenta de "superusuario" en PostgreSQL.
+    \item El dueño de la base de datos es el usuario que creamos en el paso anterior. Y la base de datos se llamara \textit{dspace}
+      \begin{block}{Crear usuario}
+        \center
+        createdb --username=postgres --owner=\textbf{Usuario} --encoding=UNICODE \textbf{dspace}
+      \end{block}
+    \item Finalmente se debe habilitar en la nueva base de datos de DSpace la extensión \textit{pgcrypto}. Esto solo puede ser realizado por un superusuario.
+      \begin{block}{Activar extensión pgcrypto}
+        \center
+        psql --username=postgres \textbf{dspace}  -c "CREATE EXTENSION pgcrypto;"
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Configuración Inicial}
+\begin{frame}[t]
+  \frametitle{Configuración Inicial}
+  \begin{itemize}
+    \item DSpace usara la configuración localizada en "\textit{dspace-source}/dspace/config/local.cfg". El archivo \textit{local.cfg} puede ser usado para guardar cualquier configuración que se desee hacer a la instalación local.
+    \item DSpace provee un archivo de configuración de ejemplo ubicado en: "\textit{dspace-source}/dspace/config/local.cfg.EXAMPLE"
+    \item CUALQUIER configuración se puede copiar en este archivo local.cfg desde dspace.cfg o cualquier otro archivo * .cfg para anular la configuración predeterminada. Para la instalación inicial de DSpace, hay algunas configuraciones clave que probablemente querrá anular.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Configuración Inicial}
+  \begin{itemize}
+    \item dspace.dir - Es el directorio donde DSpace es instalado.
+    \item dspace.server.url - URL completa de este backend de DSpace incluido el puerto y cualquier subruta.
+    \item dspace.name - nombre "adecuado" legible por humanos de su servidor, p. ej. "Mi Biblioteca Digital".
+    \item solr.server - URL completa del servidor Solr. DSpace utiliza Solr con fines de indexación.
+    \item default.language - idioma predeterminado para todos los valores de metadatos (el valor predeterminado es "en\_US")
+    \item db.url - la URL completa de JDBC a su base de datos (se proporcionan ejemplos en local.cfg.EXAMPLE)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Configuración Inicial}
+  \begin{itemize}
+    \item db.driver - qué controlador de base de datos usar, en función de si está utilizando PostgreSQL u Oracle
+    \item db.dialect - qué dialecto de la base de datos usar, en función de si está usando PostgreSQL u Oracle
+    \item db.username - el nombre de usuario de la base de datos utilizado en el paso anterior.
+    \item db.password - la contraseña de la base de datos utilizada en el paso anterior.
+    \item db.schema - el esquema de la base de datos que se utilizará (se proporcionan ejemplos en local.cfg.EXAMPLE)
+    \item mail.server - nombre de dominio completo de su servidor de correo saliente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Configuración Inicial}
+  \begin{itemize}
+    \item mail.from.address - la dirección "De:" para poner en el correo electrónico enviado por DSpace.
+    \item mail.feedback.recipient - buzón de correo para comentarios.
+    \item mail.admin - buzón para el administrador del sitio de DSpace.
+    \item alert.recipient - buzón de correo para errores / alertas del servidor
+    \item registration.notify- buzón de correo electrónico cuando se registran nuevos usuarios
+  \end{itemize}
+\end{frame}
+
+\subsection{Directorio de Instalación}
+\begin{frame}[t]
+  \frametitle{Directorio de Instalación}
+  \begin{itemize}
+    \item Cree el directorio para la instalación del backend de DSpace (es decir, "\textit{dspace}"). Como root (o un usuario con los permisos adecuados), ejecute:
+      \begin{block}{Creación del directorio}
+        \center
+        mkdir \textbf{dspace}
+      \end{block}
+    \item Asigne al usuario del sistema \textit{dspace} o el que haya creado al inicio de la instalación la propiedad del directorio:
+      \begin{block}{Cambiar propietario}
+        \center
+        chown \textbf{dspaceUsuario} \textbf{dspace}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Construcción del paquete}
+\begin{frame}[t]
+  \frametitle{Construcción del paquete}
+  \begin{itemize}
+    \item Como el usuario del sistema operativo creado para dspace(\textit{dspaceUsuario}) genere el paquete de instalación de DSpace con el siguiente comando:
+      \begin{block}{Generación del paquete de instalación}
+        \center
+        cd \textbf{dspace-source}
+
+        mvn package
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Instalación del Backend de DSpace}
+\begin{frame}[t]
+  \frametitle{Instalación del Backend de DSpace}
+  \begin{itemize}
+    \item Como el usuario del sistema operativo creado para dspace(\textit{dspaceUsuario}) instale DSpace en el directorio elegido para la instalación de DSpace, en este caso \textit{dspace}.
+      \begin{block}{Instalación}
+        \center
+        cd \textbf{dspace-source}/dspace/target/dspace-installer
+
+        ant fresh\_install
+      \end{block}
+    \item Para ver distintas opciones para la instalación se puede ejecutar:
+      \begin{block}{Opciones de instalación}
+        \center
+        ant help
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Inicialización de la Base de Datos}
+\begin{frame}[t]
+  \frametitle{Inicialización de la Base de Datos}
+  \begin{itemize}
+    \item Si bien este paso es opcional (ya que la base de datos de DSpace debe autoinicializarse en el primer inicio), siempre es bueno verificar por última vez que la conexión de la base de datos funciona correctamente. Para inicializar la ejecución de la base de datos:
+      \begin{block}{Inicializar base de datos}
+        \center
+        \textbf{dspace}/bin/dspace database migrate
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Implementar la aplicación web del servidor}
+\begin{frame}[t]
+  \frametitle{Implementar la aplicación web del servidor}
+  \begin{itemize}
+    \item El backend de DSpace consta de una única aplicación web de "servidor" (en \textit{dspace}/webapps/server). Debe implementar esta aplicación web en su contenedor de servlets para esta instalación se usara Tomcat.
+    \item Existen 2 formas de realizar esta acción:
+      \begin{enumerate}
+        \item Dígale a su instalación de Tomcat dónde encontrar su aplicación web DSpace. Como ejemplo, en el directorio \textit{tomcat}/conf/Catalina/localhost puede agregar archivos similares a los siguientes (pero reemplace \textit{dspace} con su ubicación de instalación):
+          \begin{block}{Definir una ruta de contexto para webapp de DSpace: server.xml}
+            $<$?xml version='1.0'?$>$\\
+            $<$Context\\
+            docBase="\textbf{dspace}/webapps/server"/$>$\\
+          \end{block}
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Implementar la aplicación web del servidor}
+  \begin{itemize}
+    \item []
+      \begin{enumerate}
+\setcounter{enumi}{1}
+        \item Sencillo y completo. Copia solo (o todas) las aplicaciones web de DSpace que desea usar desde el directorio \textit{dspace}/webapps al directorio apropiado en su instalación de Tomcat.
+          \begin{block}{Copiar todas las aplicaciones web a Tomcat}
+            \center
+cp -R \textbf{dspace}/webapps/* tomcat/webapps
+          \end{block}
+          \begin{block}{Copiar solo la aplicación web del servidor a Tomcat}
+            \center
+cp -R \textbf{dspace}/webapps/server tomcat/webapps*
+          \end{block}
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\section{Referencias}
+\begin{frame}[t]
+  \frametitle{Referencias}
+  \begin{itemize}
+    \item Página DSpace: \url{https://duraspace.org/dspace/}
+    \item Especificaciones DSpace: \url{https://duraspace.org/dspace/resources/technical-specifications/}
+    \item Diagrama DSpace: \url{https://duraspace.org/wp-content/uploads/dspace-files/DSpace_Diagram.pdf}
+    \item Smith M., Barton M., Bass M., Branschofsky M., McClellan G., Stuve D., Tansley R. \& Harford J.. (2003). DSpace An Open Source Dynamic Digital Repository. Septiembre 2021, de D-Lib Magazine Sitio web: \url{http://www.dlib.org/dlib/january03/smith/01smith.html}
+  \end{itemize}
+\end{frame}
+
+\end{document}
