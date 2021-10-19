@@ -1,0 +1,36 @@
+\beamer@sectionintoc {1}{Resumen}{4}{0}{1}
+\beamer@sectionintoc {2}{Dependencias del Backend}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Sistema Operativo}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Java Development Kit}{7}{0}{2}
+\beamer@subsectionintoc {2}{3}{Apache Maven}{8}{0}{2}
+\beamer@subsectionintoc {2}{4}{Apache Ant}{9}{0}{2}
+\beamer@subsectionintoc {2}{5}{Base de Datos}{10}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{1}{PostgreSQL}{11}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{2}{Oracle DataBase}{12}{0}{2}
+\beamer@subsectionintoc {2}{6}{Apache Solr}{13}{0}{2}
+\beamer@subsectionintoc {2}{7}{Apache Tomcat}{14}{0}{2}
+\beamer@sectionintoc {3}{Instalación de Backend}{15}{0}{3}
+\beamer@subsectionintoc {3}{1}{Preinstalación}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Descarga de DSpace}{18}{0}{3}
+\beamer@subsectionintoc {3}{3}{Base de Datos}{20}{0}{3}
+\beamer@subsectionintoc {3}{4}{Configuración Inicial}{23}{0}{3}
+\beamer@subsectionintoc {3}{5}{Directorio de Instalación}{27}{0}{3}
+\beamer@subsectionintoc {3}{6}{Construcción del paquete}{28}{0}{3}
+\beamer@subsectionintoc {3}{7}{Instalación del Backend de DSpace}{29}{0}{3}
+\beamer@subsectionintoc {3}{8}{Inicialización de la Base de Datos}{30}{0}{3}
+\beamer@subsectionintoc {3}{9}{Implementar la aplicación web del servidor}{31}{0}{3}
+\beamer@subsectionintoc {3}{10}{Nucleos de Solr}{33}{0}{3}
+\beamer@subsectionintoc {3}{11}{Crear una cuenta de Administrador}{35}{0}{3}
+\beamer@subsectionintoc {3}{12}{Primer inicio}{36}{0}{3}
+\beamer@subsectionintoc {3}{13}{Agregando soporte https}{37}{0}{3}
+\beamer@sectionintoc {4}{Dependencias del Frontend}{41}{0}{4}
+\beamer@subsectionintoc {4}{1}{Node.js}{42}{0}{4}
+\beamer@subsectionintoc {4}{2}{Yarn}{43}{0}{4}
+\beamer@subsectionintoc {4}{3}{PM2}{44}{0}{4}
+\beamer@sectionintoc {5}{Instalación del Frontend}{45}{0}{5}
+\beamer@subsectionintoc {5}{1}{Preinstalación}{46}{0}{5}
+\beamer@subsectionintoc {5}{2}{Creando archivo de Configuración}{47}{0}{5}
+\beamer@subsectionintoc {5}{3}{Compilar la Interfaz de Usuario}{50}{0}{5}
+\beamer@subsectionintoc {5}{4}{Configuración de PM2}{51}{0}{5}
+\beamer@subsectionintoc {5}{5}{Configuraciones Adicionales}{53}{0}{5}
+\beamer@sectionintoc {6}{Referencias}{54}{0}{6}

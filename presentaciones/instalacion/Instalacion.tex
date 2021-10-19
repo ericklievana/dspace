@@ -52,7 +52,15 @@ Reyes Reyes Julián 201643331}
   \frametitle{Índice}
   \small
   \begin{multicols}{2}
-    \tableofcontents
+    \tableofcontents[sections={1-3}]
+  \end{multicols}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Índice}
+  \small
+  \begin{multicols}{2}
+    \tableofcontents[sections={4-5}]
   \end{multicols}
 \end{frame}
 
@@ -72,7 +80,6 @@ Reyes Reyes Julián 201643331}
   \vfill
   \center
   \Huge \textbf{Dependencias del Backend}
-  \url{https://wiki.lyrasis.org/display/DSDOC7x/Installing+DSpace}
   \vfill
 \end{frame}
 
@@ -83,6 +90,10 @@ Reyes Reyes Julián 201643331}
     \item DSpace puede ser instalado y ejecutado en sistemas operativos basados en UNIX(Linux/Mac OSX) o basados en Microsoft Windows.
     \item Muchas distribuciones de Linux / Unix vienen con algunas de las dependencias a continuación preinstaladas o instaladas fácilmente mediante actualizaciones. Debe consultar la documentación de su distribución particular o los administradores del sistema local para determinar lo que ya está disponible.
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{linux.png}
+  \includegraphics[height=2cm]{mac.png}
+  \includegraphics[height=2cm]{windows.png}
 \end{frame}
 
 \subsection{Java Development Kit}
@@ -93,6 +104,8 @@ Reyes Reyes Julián 201643331}
     \item Las instrucciones de descarga e instalación de OpenJDK se pueden encontrar aquí \url{http://openjdk.java.net/install/}
     \item Es importante asegurarse de instalar el paquete de desarrollo completo(JDK).
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{openjdk.png}
 \end{frame}
 
 \subsection{Apache Maven}
@@ -103,6 +116,8 @@ Reyes Reyes Julián 201643331}
     \item Maven es necesario en la primera etapa del proceso de compilación para ensamblar el paquete de instalación para su instancia de DSpace.
     \item Apache Maven puede ser descargado desde la siguiente liga: \url{http://maven.apache.org/download.html}
   \end{itemize}
+  \center
+  \includegraphics[height=1cm]{maven.png}
 \end{frame}
 
 \subsection{Apache Ant}
@@ -113,6 +128,8 @@ Reyes Reyes Julián 201643331}
     \item Se requiere Apache Ant para la segunda etapa del proceso de compilación. Primero, Maven se usa para construir el instalador, después de lo cual Ant se usa para instalar / implementar DSpace en el directorio de instalación.
     \item Apache Ant puede ser descargado desde la siguiente liga: \url{http://ant.apache.org}
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{ant.png}
 \end{frame}
 
 \subsection{Base de Datos}
@@ -125,6 +142,8 @@ Reyes Reyes Julián 201643331}
         \item Oracle DataBase
       \end{itemize}
   \end{itemize}
+  \center
+  \includegraphics[height=3cm]{database.jpg}
 \end{frame}
 
 \subsubsection{PostgreSQL}
@@ -135,6 +154,8 @@ Reyes Reyes Julián 201643331}
     \item Este manual instalara DSpace con PostgreSQL.
     \item PostgreSQL puede ser descargado de la siguiente liga: \url{http://www.postgresql.org/}
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{postgre.png}
 \end{frame}
 
 \subsubsection{Oracle DataBase}
@@ -145,6 +166,8 @@ Reyes Reyes Julián 201643331}
     \item Tenga en cuenta que todo el desarrollo activo de DSpace se produce en PostgreSQL en este momento.
     \item Oracle DataBase puede ser descargado de la siguiente liga: \url{http://www.oracle.com/database/}
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{oracle.png}
 \end{frame}
 
 \subsection{Apache Solr}
@@ -155,6 +178,8 @@ Reyes Reyes Julián 201643331}
     \item Es posible que desee leer partes del tutorial de inicio rápido para familiarizarse con el diseño y el funcionamiento de Solr.
     \item Apache Solr puede ser descargado en la siguiente liga: \url{https://solr.apache.org/}
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{solr.png}
 \end{frame}
 
 \subsection{Apache Tomcat}
@@ -165,6 +190,8 @@ Reyes Reyes Julián 201643331}
     \item Los servlets de Java son programas que se ejecutan en un servidor web o de aplicaciones y actúan como una capa intermedia entre las solicitudes que provienen de un navegador web u otro cliente HTTP y las bases de datos o aplicaciones en el servidor HTTP.
     \item Apache Tomcat puede ser descargado desde la siguiente liga: \url{http://tomcat.apache.org}
   \end{itemize}
+  \center
+  \includegraphics[height=2cm]{tomcat.png}
 \end{frame}
 
 \section{Instalación de Backend}
@@ -395,17 +422,294 @@ Reyes Reyes Julián 201643331}
   \begin{itemize}
     \item []
       \begin{enumerate}
-\setcounter{enumi}{1}
+          \setcounter{enumi}{1}
         \item Sencillo y completo. Copia solo (o todas) las aplicaciones web de DSpace que desea usar desde el directorio \textit{dspace}/webapps al directorio apropiado en su instalación de Tomcat.
-          \begin{block}{Copiar todas las aplicaciones web a Tomcat}
-            \center
-cp -R \textbf{dspace}/webapps/* tomcat/webapps
-          \end{block}
-          \begin{block}{Copiar solo la aplicación web del servidor a Tomcat}
-            \center
-cp -R \textbf{dspace}/webapps/server tomcat/webapps*
-          \end{block}
       \end{enumerate}
+      \begin{block}{Copiar todas las aplicaciones web a Tomcat}
+        \center
+        cp -R \textbf{dspace}/webapps/* tomcat/webapps
+      \end{block}
+      \begin{block}{Copiar solo la aplicación web del servidor a Tomcat}
+        \center
+        cp -R \textbf{dspace}/webapps/server tomcat/webapps*
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Nucleos de Solr}
+\begin{frame}[t]
+  \frametitle{Nucleos de Solr}
+  \begin{itemize}
+    \item La instalación de DSpace crea un conjunto de cuatro núcleos Solr vacíos ya configurados. Para su uso es necesario copiarlos del directorio "\textit{dspace}/solr" a un directorio donde la instancia de Solr pueda detectarlos esto depende del directorio de Solr por el momento nos referiremos a este directorio como "\textit{solr}" y ademas reiniciar el servicio de Solr.
+      \begin{block}{Copiar archivos de Solr}
+        \center
+        cp -R \textbf{dspace}/solr/* \textbf{solr}/server/solr/configsets
+
+        chown -R solr:solr \textbf{solr}/server/solr/configsets
+      \end{block}
+      \begin{block}{Iniciar o Reiniciar Solr}
+        \center
+        \textbf{solr}/bin/solr restart
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Nucleos de Solr}
+  \begin{itemize}
+    \item Puede verificar el estado de Solr y sus nuevos núcleos DSpace utilizando su interfaz web administrativa. Vaya a http://localhost:8983/solr/ para ver si Solr está funcionando bien, luego mire los núcleos seleccionando (a la izquierda) Core Admin o usando la lista desplegable Core Selector.
+  \end{itemize}
+\end{frame}
+
+\subsection{Crear una cuenta de Administrador}
+\begin{frame}[t]
+  \frametitle{Crear una cuenta de Administrador}
+  \begin{itemize}
+    \item Se puede crear una cuenta de administrador para DSpace con el siguiente comando:
+      \begin{block}{Crear Cuenta Administrador}
+        \center
+        \textbf{dspace}/bin/dspace create-administrator
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Primer inicio}
+\begin{frame}[t]
+  \frametitle{Primer inicio}
+  \begin{itemize}
+    \item Reinicie Tomcat para cargar de nuevo las configuraciónes:
+      \begin{block}{Reinicio de Tomcat}
+        \center
+        \textbf{tomcat}/bin/tomcat restart
+      \end{block}
+    \item Ingrese a las siguientes urls:
+      \begin{itemize}
+        \item REST API: \url{http://dspace.myu.edu:8080/server/}
+        \item OAI-PMH: \url{http://dspace.myu.edu:8080/server/oai/request?verb=Identify}
+      \end{itemize}
+    \item Para saber si su instalación funciona correctamente puede entrar a la siguiente liga para compararla: \url{https://api7.dspace.org/server/}
+  \end{itemize}
+\end{frame}
+
+\subsection{Agregando soporte https}
+\begin{frame}[t]
+  \frametitle{Agregando soporte https}
+  \begin{itemize}
+    \item La ejecución del DSpace Backend en HTTP y el puerto 8080 solo se puede usar para entornos de desarrollo local, donde se ejecuta la interfaz de usuario y la API REST desde la misma máquina, y solo se accede a ellos a través de las URL del host local.
+    \item Para la compatibilidad con HTTPS, recomendamos instalar Apache HTTPD o Nginx, configurar SSL en ese nivel y enviar todas las solicitudes a su instalación de Tomcat. Tenga en cuenta que si desea alojar tanto el DSpace Backend como el Frontend en el mismo servidor, puede usar una instalación de Apache HTTPD o Nginx para administrar HTTPS / SSL y el proxy para ambos.
+    \item En esta guía se usara Apache HTTPD.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Agregando soporte https}
+  \begin{itemize}
+    \item Descargue e instale Apache HTTPD desde la siguiente liga: \url{https://httpd.apache.org/}
+    \item Instale los módulos \textit{mod\_proxy} y \textit{mod\_proxy\_ajp} con el siguiente comando:
+      \begin{block}{Instalación de los módulos}
+        \center
+        sudo en2mod proxy
+
+        sudo a2enmod proxy\_ajp
+      \end{block}
+    \item Reinicie Apache
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Agregando soporte https}
+  \begin{itemize}
+    \item Para que mod\_proxy\_ajp se comunique con Tomcat, deberá habilitar el conector AJP de Tomcat en el server.xml de su Tomcat.
+      \begin{block}{Habilitar Tomcat AJP}
+        $<$Connector protocol="AJP/1.3" port="8009" redirectPort="8443" URIEncoding="UTF-8"/$>$
+      \end{block}
+    \item Ahora, configure un nuevo VirtualHost para su sitio (usando HTTPS / puerto 443) que envía todas las solicitudes al conector AJP de Tomcat (que se ejecuta en el puerto 8009)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Agregando soporte https}
+  \begin{itemize}
+    \item []
+      \begin{block}{Configurando el virtual host}
+        $<$VirtualHost \_default\_:443$>$\\
+        SSLEngine on\\
+        SSLCertificateFile [full-path-to-PEM-cert]\\
+        SSLCertificateKeyFile [full-path-to-cert-KEY]\\
+        ProxyPass /server ajp://localhost:8009/server\\
+        ProxyPassReverse /server ajp://localhost:8009/server\\
+        $<$/VirtualHost$>$
+      \end{block}
+    \item Después de cambiar a HTTPS, asegúrese de volver atrás y actualizar las URL (por ejemplo, dspace.server.url) en su local.cfg para que coincida con la nueva URL de su backend. Esto requerirá reiniciar Tomcat brevemente.
+  \end{itemize}
+\end{frame}
+
+\section{Dependencias del Frontend}
+\begin{frame}[t]
+  \vfill
+  \center
+  \Huge \textbf{Dependencias del Frontend}
+  \vfill
+\end{frame}
+
+
+\subsection{Node.js}
+\begin{frame}[t]
+  \frametitle{Node.js}
+  \begin{itemize}
+    \item Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript, asíncrono, con E/S de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google.
+    \item Puede descargar Node.js asi como sus instrucciones de instalación en la siguiente liga: \url{https://nodejs.org/en/}
+  \end{itemize}
+  \center
+  \includegraphics[height=3cm]{node.png}
+\end{frame}
+
+\subsection{Yarn}
+\begin{frame}[t]
+  \frametitle{Yarn}
+  \begin{itemize}
+    \item Yarn es un administrador de paquetes para su código. Permite usar y compartir (por ejemplo, JavaScript) código con otros desarrolladores de todo el mundo. Yarn hace esto de forma rápida, segura y confiable.
+    \item DSpace funciona solo con la versión 1.x de Yarn.
+    \item Puede instalar Yarn, despues de instalar Node.js con el comando:
+      \begin{block}{Instalar Yarn}
+        \center
+        npm install --global yarn
+      \end{block}
+  \end{itemize}
+  \center
+  \includegraphics[height=2cm]{yarn.png}
+\end{frame}
+
+\subsection{PM2}
+\begin{frame}[t]
+  \frametitle{PM2}
+  \begin{itemize}
+    \item En escenarios de producción, recomendamos encarecidamente iniciar/detener la interfaz de usuario con un administrador de procesos Node.js. En esta guía recomendamos usar \textit{PM2}.
+    \item Al igual que Yarn puede instalar PM2 despues de instalar Node.js con el siguiente comando:
+      \begin{block}{Instalación PM2}
+        \center
+        npm install --global pm2
+      \end{block}
+  \end{itemize}
+  \center
+  \includegraphics[height=2cm]{pm2.png}
+\end{frame}
+
+\section{Instalación del Frontend}
+\begin{frame}[t]
+  \vfill
+  \center
+  \Huge \textbf{Instalación del Frontend}
+  \vfill
+\end{frame}
+
+\subsection{Preinstalación}
+\begin{frame}[t]
+  \frametitle{Preinstalación}
+  \begin{itemize}
+    \item Primero, instale todos los requisitos de frontend enumerados anteriormente y verifique que la API de backend/REST sea de acceso público.
+    \item Descargue la última versión de dspace-angular del repositorio de GitHub de DSpace. Puede elegir descargar el archivo zip o tar.gz proporcionado por GitHub, o puede usar "git" para verificar la etiqueta apropiada (por ejemplo, dspace-7.0) o rama.
+    \item Instale todas las dependencias locales necesarias ejecutando lo siguiente desde el directorio "dspace-angular" descomprimido
+      \begin{block}{Instalando Dependencias}
+        \center
+        yarn install
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\subsection{Creando archivo de Configuración}
+\begin{frame}[t]
+  \frametitle{Creando archivo de Configuración}
+  \begin{itemize}
+    \item Cree un archivo de configuración de producción en \textit{dspace-angular}/src/environments/environment.prod.ts.
+    \item Es posible que desee utilizar \textit{environment.template.ts} como punto de partida. Este archivo \textit{environment.prod.ts} se puede utilizar para anular cualquiera de las configuraciones predeterminadas especificadas en \textit{environment.common.ts}
+    \item Como mínimo, este archivo DEBE incluir las secciones "ui" y "rest" similares a las siguientes:
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Creando archivo de Configuración}
+  \begin{itemize}
+    \item La sección UI define dónde desea que Node.js se ejecute / responda. A menudo es una URL de host local, especialmente si está utilizando un proxy.
+      \begin{block}{Configuración de UI}
+        ui: \{\\
+        ssl: false,\\
+        host: 'localhost',\\
+        port: 4000,\\
+        nameSpace: '$/$'\\
+        \},
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Creando archivo de Configuración}
+  \begin{itemize}
+    \item La configuración de REST DEBE corresponder a la URL principal del backend. Por lo general, esto significa que deben mantenerse sincronizados con el valor de "dspace.server.url" en el archivo local.cfg del backend.
+      \begin{block}{Configuración de REST}
+        rest: \{\\
+        ssl: true,\\
+        host: 'api.mydspace.edu',\\
+        port: 443,\\
+        nameSpace: '$/$server'\\
+        \}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Compilar la Interfaz de Usuario}
+\begin{frame}[t]
+  \frametitle{Compilar la Interfaz de Usuario}
+  \begin{itemize}
+    \item Cree la interfaz de usuario para la producción. Esto usa su environment.prod.ts y el código fuente para crear una versión compilada de la interfaz de usuario en la carpeta \textit{dspace-angular}/dist
+    \item Puede hacerlo con el siguiente comando:
+      \begin{block}{Compilación de la interfaz}
+        \center
+        yarn run build:prod
+      \end{block}
+    \item Si cambia ó actualiza su \textit{environment.prod.ts}, deberá reconstruir la aplicación de la interfaz de usuario, vuelva a ejecutar este comando.
+  \end{itemize}
+\end{frame}
+
+\subsection{Configuración de PM2}
+\begin{frame}[t]
+  \frametitle{Configuración de PM2}
+  \begin{itemize}
+    \item Cree un archivo de configuración JSON que describa cómo ejecutar nuestra aplicación de interfaz de usuario.
+    \item No es necesario que esté en el mismo directorio que la base de código dspace-angular.
+      \begin{block}{Archivo de configuración PM2: dspace-angular.json}
+        \{ "apps": [ \{\\
+        "name": "dspace-angular",\\
+        "cwd": "/home/dspace/dspace-angular",\\
+        "script": "yarn",\\
+        "args": "run serve:ssr",\\
+        "interpreter": "none"\\
+        \} ] \}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Configuración de PM2}
+  \begin{itemize}
+    \item Ahora, inicie la aplicación usando PM2 usando el archivo de configuración que creó en el paso anterior.
+    \item Suponemos que el archivo de configuración es llamado dspace-angular.json
+      \begin{block}{Iniciando la interfaz}
+        \center
+        pm2 start dspace-angular.json
+      \end{block}
+    \item En este punto, la interfaz de usuario debería estar disponible en la URL que configuró en su archivo \textit{environment.prod.ts}.
+    \item Puede compararla con la interfaz de ejemplo que puede encontrar en la siguiente liga: \url{https://demo7.dspace.org/}
+  \end{itemize}
+\end{frame}
+
+\subsection{Configuraciones Adicionales}
+\begin{frame}[t]
+  \frametitle{Configuraciones Adicionales}
+  \begin{itemize}
+    \item Las configuraciones adicionales de la interfaz de usuario se describen en \textit{environment.common.ts}.
+    \item De igual forma puede encontrar mas opciones de configuración y mayor información sobre el funcionamiento de DSpace en la siguiente liga: \url{https://github.com/DSpace/dspace-angular/blob/main/docs/Configuration.md}
   \end{itemize}
 \end{frame}
 
@@ -413,10 +717,18 @@ cp -R \textbf{dspace}/webapps/server tomcat/webapps*
 \begin{frame}[t]
   \frametitle{Referencias}
   \begin{itemize}
-    \item Página DSpace: \url{https://duraspace.org/dspace/}
-    \item Especificaciones DSpace: \url{https://duraspace.org/dspace/resources/technical-specifications/}
-    \item Diagrama DSpace: \url{https://duraspace.org/wp-content/uploads/dspace-files/DSpace_Diagram.pdf}
-    \item Smith M., Barton M., Bass M., Branschofsky M., McClellan G., Stuve D., Tansley R. \& Harford J.. (2003). DSpace An Open Source Dynamic Digital Repository. Septiembre 2021, de D-Lib Magazine Sitio web: \url{http://www.dlib.org/dlib/january03/smith/01smith.html}
+    \item Guía de Instalación de DSpace: \url{https://wiki.lyrasis.org/display/DSDOC7x/Installing+DSpace}
+    \item Opciones extra de configuración: \url{https://github.com/DSpace/dspace-angular/blob/main/docs/Configuration.md}
+    \item Repositorio de DSpace-Angular: \url{https://github.com/DSpace/dspace-angular}
+    \item Repositorio de DSpace: \url{https://github.com/DSpace/DSpace}
+    \item OpenJDK: \url{http://openjdk.java.net/}
+    \item Apache Maven: \url{https://maven.apache.org/}
+    \item PostgreSQL: \url{https://www.postgresql.org/}
+    \item Apache Solr: \url{https://solr.apache.org/}
+    \item Apache Tomcat: \url{http://tomcat.apache.org/}
+    \item Node.js: \url{https://nodejs.org/en/}
+    \item Yarn: \url{https://yarnpkg.com/}
+    \item PM2: \url{https://pm2.keymetrics.io/}
   \end{itemize}
 \end{frame}
 
