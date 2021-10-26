@@ -3,6 +3,8 @@
 \usepackage{tikz}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{hyperref}
 \graphicspath{{./images/}}
@@ -11,10 +13,7 @@
 \usecolortheme{dolphin}
 
 \setbeamertemplate{background}{
-  \begin{tikzpicture}
-    \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{canvasLectura3.jpg}};
-  \end{tikzpicture}
-}
+  \tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.center)] { \includegraphics[height=\paperheight,width=\paperwidth]{canvasLectura3.jpg}}; }
 
 \title{DSpace: \\Manejo de repositorios abiertos}
 
@@ -30,15 +29,9 @@ Reyes Reyes Julián 201643331}
 
 \begin{document}
 
-{
-  \setbeamertemplate{background}{
-    \begin{tikzpicture}
-      \node [opacity=0.2]{\includegraphics[width=\paperwidth,height=\paperheight]{IoTCanvas.jpg}};
-    \end{tikzpicture}
-  }
-  \begin{frame}[t]
-    \titlepage
-  \end{frame}
+{ \setbeamertemplate{background}{ \tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.center)] { \includegraphics[height=\paperheight,width=\paperwidth]{IoTCanvas.jpg}}; } \begin{frame}[t]
+  \titlepage
+\end{frame}
 }
 
 \begin{frame}[t]
@@ -278,14 +271,9 @@ Reyes Reyes Julián 201643331}
 
 {
   \setbeamertemplate{navigation symbols}{}
-  \begin{frame}<article:0>[plain]
-    \begin{tikzpicture}[remember picture,overlay]
-      \node[at=(current page.center)] {
-        \includegraphics[keepaspectratio,
-        width=\paperwidth,
-        height=\paperheight]{diagramaDSpace.png}
-      };
-    \end{tikzpicture}
+  \begin{frame}[plain]
+    \includegraphics[width=\paperwidth,
+    height=\paperheight]{diagramaDSpace.png}
   \end{frame}
 }
 
@@ -340,4 +328,13 @@ Reyes Reyes Julián 201643331}
   \end{itemize}
 \end{frame}
 
-\end{document}
+{
+  \setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{space1.png}}
+  \begin{frame}[t]
+    \vfill
+    \center
+    \Huge \color{white}Gracias por su atención
+    \vfill
+  \end{frame}
+}
+  \end{document}
