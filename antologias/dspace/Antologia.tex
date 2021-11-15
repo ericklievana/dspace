@@ -1,0 +1,267 @@
+\documentclass{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,allcolors=black]{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+\titleformat{\chapter}[display]
+{\bfseries\Huge}
+{\rule{\textwidth}{1pt} \Large \chaptertitlename \ \thechapter}
+{0mm}
+{}
+[\rule{\textwidth}{1pt}]
+
+\begin{document}
+\begin{titlepage}
+  \begin{center}
+    \rule{\textwidth}{3pt}
+    \vspace{1em}
+    \Huge
+    \textbf{Antología: DSpace}
+
+    \Large
+    García Rojas Alan
+
+    Liévana Poy Erick
+
+    Lima Estrada Efraín
+
+    Reyes Reyes Julián
+
+    BUAP Puebla - México
+
+    \normalsize
+    \vspace{1em}
+    \rule{\textwidth}{3pt}
+    \vfill
+    \Large
+    2021
+    \normalsize
+  \end{center}
+\end{titlepage}
+\clearpage
+
+\pagenumbering{Roman}
+\section*{}
+\addcontentsline{toc}{chapter}{Presentación}
+
+\begin{center}
+
+  \includegraphics[width=0.4\linewidth]{buaplogo.png}
+
+  \bfseries \MakeUppercase{Benemérita Universidad Autónoma de Puebla}
+
+  Facultad de Ciencias de la Computación
+
+  Administración de Redes
+
+  Antología: DSpace
+
+  García Rojas Alan
+
+  Liévana Poy Erick
+
+  Lima Estrada Efraín
+
+  Reyes Reyes Julián
+
+  Profesor Larios Gomez Mariano
+\end{center}
+
+\chapter*{Dedicatoria}
+\addcontentsline{toc}{chapter}{Dedicatoria}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\tableofcontents
+
+\chapter{Introducción}
+\pagenumbering{arabic}
+\section{Repositorios}
+\begin{itemize}
+  \item Un repositorio es un espacio centralizado donde se almacena, organiza, mantiene y difunde información digital, habitualmente archivos informáticos, que pueden contener trabajos científicos, conjuntos de datos o software
+  \item Un repositorio abierto son sistemas de información que preservan y organizan materiales científicos y académicos como apoyo a la investigación y el aprendizaje, a la vez que garantizan el acceso a la información
+  \item Los repositorios abiertos tienen sus inicios en los años 90, en el área de la física y las matemáticas, donde los académicos aprovecharon la red para compartir sus investigaciones con otros colegas. Este proceso era valioso porque aceleraba el ciclo científico de publicación y revisión de resultados
+\end{itemize}
+
+\section{¿Qué es DSpace?}
+\begin{itemize}
+  \item Es un software de código abierto que provee herramientas para la administración de colecciones digitales a través de repositorios abiertos.
+  \item Responde a la necesidad específica como sistema de archivos digitales centrado en el almacenamiento, acceso y preservación a largo plazo de contenido digital.
+\end{itemize}
+
+\section{¿Para qué se usa DSpace?}
+\begin{itemize}
+  \item Comúnmente usada para la administración de colecciones digitales o repositorio bibliográfico
+  \item Soporta una gran variedad de datos entre los que destacan:
+    \begin{itemize}
+      \item Libros
+      \item Tesis
+      \item Fotografías
+      \item Filmes
+      \item Vídeos
+      \item Datos de Investigación
+    \end{itemize}
+\end{itemize}
+
+\section{Historia}
+\begin{itemize}
+  \item Fue desarrollado en 2002 por Hewlett-Packard(HP) y el Instituto de Tecnología de Massachusetts(MIT)
+  \item Actualmente es desarrollado y mantenido por DuraSpace
+  \item DSpace esta disponible en mas de 20 lenguajes
+\end{itemize}
+
+\section{Logros}
+\begin{itemize}
+  \item Dspace es usado por mas de 2500 instituciones al lo largo del mundo, entre las que destacan:
+    \begin{itemize}
+      \item El Banco Mundial
+      \item Universidad de Cambridge
+      \item Universidad de Hardvard
+      \item Instituto de Tecnología de Massachusetts
+      \item Imperial College London
+      \item La Organización Mundial de la Salud
+    \end{itemize}
+\end{itemize}
+
+\chapter{Características}
+
+\section{Arquitectura de la Aplicación}
+\begin{itemize}
+  \item Sofware de Código libre y abierto
+  \item Manejo del FrontEnd y BackEnd
+  \item Base de Datos
+  \item Motor de Búsqueda
+  \item Uso de Metadatos
+\end{itemize}
+
+\section{Motor de Búsqueda Integrado}
+\begin{itemize}
+  \item Tiene integrado Apache Solr, un motor de búsqueda que permite:
+    \begin{itemize}
+      \item Búsqueda y Recuperación
+      \item Filtro de resultados
+      \item El texto completo de los archivos es indexado
+      \item Búsqueda a través de metadatos
+    \end{itemize}
+  \item Las interfaces de búsquedas son personalizables
+\end{itemize}
+
+\section{Reconoce todos los Tipos de Archivos}
+\begin{itemize}
+  \item DSpace puede almacenar cualquier tipo de archivos
+  \item Automáticamente reconoce los tipos de archivos mas comunes:
+    \begin{itemize}
+      \item DOC
+      \item PDF
+      \item XLS
+      \item PPT
+      \item JPEG
+      \item MPEG
+      \item TIFF
+    \end{itemize}
+\end{itemize}
+
+\section{Metadatos}
+\begin{itemize}
+  \item DSpace usa Qualified Dublin Core(QDC) un sistema de 15 definiciones semánticas descriptivas que pretenden transmitir un significado semántico a las mismas. Estas definiciones:
+    \begin{itemize}
+      \item Son opcionales
+      \item Se pueden repetir
+      \item Pueden aparecer en cualquier orden
+    \end{itemize}
+  \item Este sistema de definiciones fue diseñado específicamente para proporcionar un vocabulario de características "base", capaces de proporcionar la información descriptiva básica sobre cualquier recurso, sin que importe el formato de origen, el área de especialización o el origen cultural
+\end{itemize}
+
+\section{Herramientas y Plugins}
+\begin{itemize}
+  \item DSpace provee un conjunto de herramientas para la administración, búsqueda, edición, importación, exportación, etc. de los contenidos del repositorio.
+  \item De igual forma DSpace permite el uso de plugins comerciales
+\end{itemize}
+
+\section{Seguridad}
+\begin{itemize}
+  \item DSpace tiene integrado su propio sistema de autenticación y autorización
+  \item De igual forma permite el uso de otros sistemas de autentificarían como LDAP o Shibboleth
+  \item Permite la asignación de permisos para leer/escribir, en todo el sistema, por comunidad o por colección, por ítem o por archivo.
+  \item Igual permite la asignación de permisos administrativos por comunidad o por colección
+\end{itemize}
+
+\section{Recuperación}
+\begin{itemize}
+  \item DSpace permite exportar todo el contenido del repositorio como Paquetes de Información de Archivo(AIP)
+  \item Estos AIP pueden ser usados para restaurar el sitio completo, comunidades, colecciones o items
+\end{itemize}
+
+\section{Compilación}
+\begin{itemize}
+  \item DSpace compila de acuerdo a los protocolos estándar, así como con las mejores prácticas para acceder, importar y exportar
+  \item Uso de los protocolos:
+    \begin{itemize}
+      \item Open Archives Initiative Protocol for Metadata Harvesting(OAI-PMH)
+      \item SWORD V2
+      \item OpenAIRE
+      \item WebDAV
+      \item OpenSearch
+      \item OpenURL
+      \item RSS
+      \item ATOM
+    \end{itemize}
+\end{itemize}
+
+\section{Base de Datos}
+\begin{itemize}
+  \item DSpace permite elegir entre las Bases de Datos:
+    \begin{itemize}
+      \item PostgreSQL
+      \item Oracle
+    \end{itemize}
+  \item Esta base puede manejar los archivos y su metadata.
+\end{itemize}
+
+\section{Manejo de Archivos}
+\begin{itemize}
+  \item El repositorio de DSpace puede ser guardado de manera local o en una solución basada en la nube como Amazon S3
+  \item Al recibir un archivo DSpace calcula y guarda una suma de verificación para cada archivo. DSpace usa estas sumas de verificación para validar la integridad de los archivos.
+\end{itemize}
+
+\chapter{Funcionamiento}
+
+\section{Propuesta de Información}
+\begin{itemize}
+  \item El usuario envía su propuesta de información. En este propuesta se envían los archivos junto con su metadata.
+  \item Esto se realiza a través de la interfaz web del repositorio.
+  \item Esta propuesta es revisada por el curador de la colección, quien puede aceptar o rechazar la propuesta
+    \begin{itemize}
+      \item Si es rechazada se informa al usuario a través de un correo la razón del rechazo, el usuario puede hacer las modificaciones necesarias para reiniciar el proceso
+      \item Si es aceptada, entonces se inicia el siguiente paso en la metodología de trabajo. De no haber otro paso la información es guardada en la colección
+    \end{itemize}
+  \item La información ya almacenada en el repositorio, puede ser buscada y recuperada de manera sencilla a partir del a interfaz web del repositorio. Puede buscarse por su contenido o por su metadata
+\end{itemize}
+
+\section{Estructura}
+\begin{itemize}
+  \item La información del usuario puede componerse de 1 o mas archivos y su metadata, esto se une en un bloque unitario llamado \textit{Ítem}
+  \item En DSpace un ítem es la unidad atómica del repositorio. Consiste de información relacionada por su metadata, la cual es usada para indexada para su búsqueda en el futuro
+  \item Un conjunto de \textit{Items} es una colección. Esta es formada por material que esta relacionado de manera lógica.
+\end{itemize}
+
+\begin{itemize}
+  \item Una comunidad esta formada por un conjunto de colecciones. A su vez una comunidad corresponde a partes de la organización como departamentos, laboratorios, centros de investigación o escuelas.
+  \item El diseño modular de DSpace le permite la creación de repositorios grandes e ínter-disciplinarios, que pueden ser usados por múltiples organizaciones.
+  \item DSpace esta diseñado para preservar la información funcional y actualizada. Adaptándose a los formatos, medios y paradigmas que van evolucionando respecto al tiempo.
+\end{itemize}
+
+\chapter{Referencias}
+\begin{enumerate}[label={[\arabic*]}]
+  \item Página DSpace: \url{https://duraspace.org/dspace/}
+  \item Especificaciones DSpace: \url{https://duraspace.org/dspace/resources/technical-specifications/}
+  \item Diagrama DSpace: \url{https://duraspace.org/wp-content/uploads/dspace-files/DSpace_Diagram.pdf}
+  \item Smith M., Barton M., Bass M., Branschofsky M., McClellan G., Stuve D., Tansley R. \& Harford J.. (2003). DSpace An Open Source Dynamic Digital Repository. Septiembre 2021, de D-Lib Magazine Sitio web: \url{http://www.dlib.org/dlib/january03/smith/01smith.html}
+\end{enumerate}
+
+\end{document}
